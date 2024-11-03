@@ -1,21 +1,25 @@
 import dotenv from 'dotenv';
 import express from 'express';
 import api from './api/index.js';
-import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 // import db from './models/index.js';
 import cors from 'cors';
 import https from 'https';
 import fs from 'fs';
+import helmet from 'helmet';
+import morgan from 'morgan';
 dotenv.config();
 
 const app = express();
 const { PORT, NODE_ENV} = process.env;
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(helmet());
 app.use(cors()); // CORS 설정
-app.use(bodyParser.json()); // JSON 요청 본문 파싱
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }));
 app.use('/api', api); // API 라우트 설정
+app.use(morgan('dev'));
 
 const port = PORT || 1365;
 
