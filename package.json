@@ -3,9 +3,21 @@
   "version": "1.0.0",
   "description": "rainit-chat-backend",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec babel-node src/index.js",
+    "start": "NODE_ENV=production node src/index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "passport": "^0.7.0",
+    "sequelize": "^6.37.5"
+  }
 }
