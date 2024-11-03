@@ -3,8 +3,8 @@ rainit-chat-backend
 
 ## .env
 ```
-PORT=
-COOKIT_SECRET=onethreesixfive
-JWT_SECRET=LOVEONETHREESIXFIVE
+PORT=7070
+COOKIT_SECRET=rainitrainitrainit
+JWT_SECRET=rainitrainitrainitrainitrainitrainit
 OPENAI_API_KEY=ck- 
 ```
