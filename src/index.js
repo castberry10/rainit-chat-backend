@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import api from './api/index.js';
 import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 // import db from './models/index.js';
 import cors from 'cors';
 import https from 'https';
@@ -9,8 +10,9 @@ import fs from 'fs';
 dotenv.config();
 
 const app = express();
-const { PORT} = process.env;
+const { PORT, NODE_ENV} = process.env;
 
+app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(cors()); // CORS 설정
 app.use(bodyParser.json()); // JSON 요청 본문 파싱
 app.use('/api', api); // API 라우트 설정
