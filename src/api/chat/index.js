@@ -1,8 +1,8 @@
 import Router from 'koa-router';
 import { justrainit } from './justrainit.ctrl.js';
 
-const matchmaking = new Router();
+const chat = new Router();
 
-matchmaking.post('/just', justrainit);
+chat.post('/just', justrainit);
 
-export default matchmaking;
+export default chat;
