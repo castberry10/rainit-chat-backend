@@ -1,5 +1,8 @@
 import Router from 'koa-router';
-import { justrainit } from './quizrainit.ctrl.js';
+import { quizrainit } from './quizrainit.ctrl.js';
+import { justrainit } from './justrainit.ctrl.js';
+import { seerainit } from './seerainit.ctrl.js';
+import { magicrainit } from './magicrainit.ctrl.js';
 
 const chat = new Router();
 

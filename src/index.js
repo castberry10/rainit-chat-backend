@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', api); // API 라우트 설정
 app.use(morgan('dev'));
 
-const port = PORT || 1365;
+const port = PORT || 7070;
 
 if (NODE_ENV === 'production') {
   // 프로덕션 환경에서 HTTPS 서버 실행
