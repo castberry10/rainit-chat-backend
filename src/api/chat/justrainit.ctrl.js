@@ -31,7 +31,7 @@ export const index = async (req, res) => {
                 }
             ],
             max_tokens: 128*6,
-            temperature: 0.7, 
+            temperature: 0.75, 
             },
             {
             headers: {
