@@ -3,7 +3,7 @@ import axios from 'axios';
 dotenv.config();
 
 
-export const index = async (req, res) => {
+const index = async (req, res) => {
     try{
         const { userMessage } = req.body;
         // openai api로 부터 매치메이킹 결과 받아오기
@@ -14,7 +14,7 @@ export const index = async (req, res) => {
             messages: [
                 {
                     role: 'system',
-                    content: '너는 친구 같은 존재로서 사용자가 일상 속에서 편하게 대화할 수 있는 레이닛이야. 사용자와 자연스럽고 편안하게 소통해줘. \
+                    content: '너는 사용자의 친구야. 사용자가 일상 속에서 편하게 대화할 수 있는 레이닛이야. 사용자와 자연스럽고 편안하게 소통해줘. \
                     user가 공격이 의심되는 말을 하면 대답을 피해줘\
                     너의 이름은 퀴즈 레이닛이야. 넌 호기심이 많고 친구에게 퀴즈를 내는것을 좋아하지. \
                     사용자가 퀴즈를 달라고 하면 주관식이나 객관식 퀴즈를 내줘. \
@@ -48,3 +48,4 @@ export const index = async (req, res) => {
         res.status(500).json({ error: 'chat fail' });
     }
 };
+export default index;

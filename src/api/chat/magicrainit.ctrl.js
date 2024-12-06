@@ -3,7 +3,7 @@ import axios from 'axios';
 dotenv.config();
 
 
-export const index = async (req, res) => {
+const index = async (req, res) => {
     try{
         const { userMessage } = req.body;
         // openai api로 부터 매치메이킹 결과 받아오기
@@ -49,3 +49,4 @@ export const index = async (req, res) => {
         res.status(500).json({ error: 'chat fail' });
     }
 };
+export default index;

@@ -8,6 +8,7 @@ import https from 'https';
 import fs from 'fs';
 import helmet from 'helmet';
 import morgan from 'morgan';
+
 dotenv.config();
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(cors()); // CORS 설정
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', api); // API 라우트 설정
+// app.use('/chat', chat);
 app.use(morgan('dev'));
 
 const port = PORT || 7070;
