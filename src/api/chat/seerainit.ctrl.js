@@ -23,14 +23,18 @@ const index = async (req, res) => {
                     한번에 너무 길게 말하지말고 한줄씩 대답해줘. \
                     답변은 {"rainit": "사과가 좋아요. 당근보다요."} 이런식으로 답변해줘. \
                     채팅앱에서 json으로 파싱해야하거든.\
-                    메세지 로그를 줄껀데 {[{"sender": "user","text": "사용자의 말", "timestamp": "2024-12-06T12:00:03Z"}, {"sender": "rainit", "text": "rainit의 말", "timestamp": "2024-12-06T12:01:03Z"}, ...]} 이런식으로 주어져\
+                    메세지 로그를 줄껀데 {"log": [{"sender": "user","text": "사용자의 말", "timestamp": "2024-12-06T12:00:03Z"}, {"sender": "rainit", "text": "rainit의 말", "timestamp": "2024-12-06T12:01:03Z"}, ...]} 이런식으로 주어져\
                     저걸 파싱해서 이해하고 대답하면 돼.\
                     timestamp가 적용되지 않으면 "timestemp":null로 지정할껀데 어차피 너 대화로그 이해하는데 타임스템프 필요없잖아. 무시하면돼.\
+                    사용자가 별 말이 없는한 반말로 대답하고 귀엽게 대답해줘. \
                     '
                 },
                 {
                     role: 'user',
                     content: `
+                    메세지 로그:
+                    ${JSON.stringify(userMessageLog)}
+
                     사용자의 말:
                     ${userMessage}
                 
@@ -48,7 +52,8 @@ const index = async (req, res) => {
             }
         );
 
-        res.json(response.data.choices[0].message.content);
+        const responseString = response.data.choices[0].message.content;
+        res.json(JSON.parse(responseString));
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'chat fail' });
