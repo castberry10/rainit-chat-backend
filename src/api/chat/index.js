@@ -1,7 +1,7 @@
 import express from 'express';
 import quizrainit from './quizrainit.ctrl.js';
 import justrainit from './justrainit.ctrl.js';
-import searainit from './seerainit.ctrl.js';
+import searainit from './searainit.ctrl.js';
 import magicrainit from './magicrainit.ctrl.js';
 
 const chat = express.Router();
