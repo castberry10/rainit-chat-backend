@@ -8,11 +8,21 @@ import https from 'https';
 import fs from 'fs';
 import helmet from 'helmet';
 import morgan from 'morgan';
-
+import mongoose from 'mongoose';
 dotenv.config();
+const { PORT, NODE_ENV, MONGO_URI} = process.env;
+
+mongoose.connect(MONGO_URI)
+	.then(()=>{
+	console.log('Connected to MongoDB')
+	// createFakeData(); fake 데이터 생성
+	})
+	.catch(e => {
+	console.error(e);
+});
 
 const app = express();
-const { PORT, NODE_ENV} = process.env;
+
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(helmet());
