@@ -12,14 +12,14 @@ import mongoose from 'mongoose';
 dotenv.config();
 const { PORT, NODE_ENV, MONGO_URI} = process.env;
 
-mongoose.connect(MONGO_URI)
-	.then(()=>{
-	console.log('Connected to MongoDB')
-	// createFakeData(); fake 데이터 생성
-	})
-	.catch(e => {
-	console.error(e);
-});
+// mongoose.connect(MONGO_URI)
+// 	.then(()=>{
+// 	console.log('Connected to MongoDB')
+// 	// createFakeData(); fake 데이터 생성
+// 	})
+// 	.catch(e => {
+// 	console.error(e);
+// });
 
 const app = express();
 
