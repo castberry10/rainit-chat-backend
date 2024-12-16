@@ -38,9 +38,7 @@ const index = async (req, res) => {
                     ${JSON.stringify(userMessageLog)}
 
                     사용자의 말:
-                    ${userMessage}
-                
-                    사용자와 편하게 대화를 이어갈 수 있도록 응답해줘. 감정적인 공감이나 일상적인 조언도 자연스럽게 포함해줘.`
+                    ${userMessage}s.`
                 }
             ],
             max_tokens: 128*6,
