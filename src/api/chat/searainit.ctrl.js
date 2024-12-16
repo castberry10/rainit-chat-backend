@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import axios from 'axios';
-import commonPrompt from '../../lib/prompt/common_prompt';
+import commonPrompt from '../../lib/prompt/common_prompt.js';
 dotenv.config();
 const persona = `
 [캐릭터 페르소나]

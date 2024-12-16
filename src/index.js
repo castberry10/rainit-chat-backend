@@ -8,7 +8,7 @@ import https from 'https';
 import fs from 'fs';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import mongoose from 'mongoose';
+// import mongoose from 'mongoose';
 dotenv.config();
 const { PORT, NODE_ENV, MONGO_URI} = process.env;
 
