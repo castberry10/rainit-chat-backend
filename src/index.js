@@ -23,7 +23,6 @@ const { PORT, NODE_ENV, MONGO_URI} = process.env;
 
 const app = express();
 
-
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(helmet());
 app.use(cors()); // CORS 설정
